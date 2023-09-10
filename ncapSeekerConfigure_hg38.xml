@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<configure>
+  <splicingDir_V30>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationSite/splicing</splicingDir_V30>
+  <exonAnnotation_rmMiRNA>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationBed/hg38.genecode.v30.tRNA.snoRNA.miRNA.rmsk.chrM.RefseqNcrna.upDwStream.curated.exonFeatures.rmMiRNA.bed6</exonAnnotation_rmMiRNA>
+  <rriScan>/public/home/huangjh/bioTools/bin/rriScan</rriScan>
+  <rriScanParameter>-l 15 -M 0 -p 0 -s 5 -g 1</rriScanParameter>
+  <starParameter_rriScan>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --outFilterType Normal --outFilterMultimapNmax 30 --outFilterMultimapScoreRange 0 --alignIntronMin 3 --scoreGapNoncan -2 --scoreGapATAC -2 --scoreGapGCAG -2 --chimSegmentMin 15 --chimJunctionOverhangMin 15 --chimMultimapNmax 30 --chimMultimapScoreRange 2 --chimScoreJunctionNonGTAG -8 --alignSJoverhangMin 15 --alignSJDBoverhangMin 10 --chimOutType Junctions --outSAMtype BAM SortedByCoordinate  --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --limitOutSJcollapsed 5000000 --outReadsUnmapped Fastx  --readFilesCommand zcat</starParameter_rriScan>
+  <intronScan>/public/home/huangjh/bioTools/bin/intronScan</intronScan>
+  <intronScanParameter>--norm --pair</intronScanParameter>
+  <trimScan>/public/home/huangjh/bioTools/bin/trimScan</trimScan>
+  <trimScanParameter>--onlyPE --nap</trimScanParameter>
+  <scanMotif>/public/home/huangjh/bioTools/bin/scanMotif</scanMotif>
+  <scanMotifParameter>-s 0.7</scanMotifParameter>
+  <motifMatrix>/public/home/huangjh/perlBioTools/scanMotif/manual_correct_motifs.motif</motifMatrix>
+  <motifMatrix_pol3>/public/home/huangjh/perlBioTools/scanMotif/pol3Motif.motif</motifMatrix_pol3>
+  <rnaMotifSeeker>/public/home/huangjh/bioTools/bin/rnaMotifSeeker</rnaMotifSeeker> 
+  <rnaMotifSeekerParameter>--norc</rnaMotifSeekerParameter>
+  <genomeFile>/public/home/huangjh/genome/human/hg38/hg38.fa</genomeFile>
+  <faidxFile>/public/home/huangjh/genome/human/hg38/hg38.fa.fai</faidxFile>
+  <exonAnnotation>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationBed/hg38.genecode.v30.tRNA.snoRNA.miRNA.rmsk.chrM.RefseqNcrna.curated.exonFeatures.bed6</exonAnnotation>
+  <exonAnnotation_revisedSnoRA37AB>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationBed/hg38.genecode.v30.tRNA.snoRNA.miRNA.rmsk.chrM.RefseqNcrna.curated.exonFeatures.revisedSnoRA37AB.bed6</exonAnnotation_revisedSnoRA37AB>
+  <geneGtf>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/originalData/hg38.gencode.v30.annotation.gtf</geneGtf>
+  <annotationDir>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationSite/common</annotationDir>
+  <ncrnaDir>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationSite/ncRNA</ncrnaDir>
+  <splicingDir_2>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationSite/splicing/1</splicingDir_2>
+  <splicingDir>/public/home/huangjh/genome/human/hg38/annotations/gencodeV30/annotationSite/splicing</splicingDir>
+  <RNAmodDir>/public/home/huangjh/genome/modSites</RNAmodDir>
+  <modSite>/public/home/huangjh/genome/modSites/human/human.hg38.allMod.result.col29.bed6</modSite>
+  <conservationProfile>/public/home/huangjh/genome/human/hg38/conservation/hg38.phyloP100way.bw</conservationProfile>
+  <starProgram>/public/home/huangjh/softwares/STAR/bin/STAR</starProgram>
+  <starParameter>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType EndToEnd --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.05  --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 15  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMtype BAM Unsorted --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat</starParameter>
+  <chainDir>/public/home/huangjh/genome/chainFile/hg38</chainDir>
+  <starParameter_nonZcat>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType Local --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.05  --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMtype BAM Unsorted --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair</starParameter_nonZcat>
+  <genomeSeqDir>/public/home/huangjh/genome/WholeGenomeFasta</genomeSeqDir>
+  <modificationSite>/public/home/huangjh/genome/modSites/human_all_RNA_modification_sites.bed6</modificationSite>
+  <RbsSite>/public/home/huangjh/genome/rbsSites/hg38_all_CLIP_peaks_sorted.bed</RbsSite>
+  <starIdx>/public/home/huangjh/genome/human/hg38/indexes/StarIndex/</starIdx>
+  <starIdx_napRNAs>/public/home/huangjh/genome/human/hg38/indexes/StarNewIndex/napRNAs/</starIdx_napRNAs>
+  <starParameterAlignEndsTypeLocal>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType Local --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.05  --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMtype BAM Unsorted --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat</starParameterAlignEndsTypeLocal>
+  <starParameter_shapemapper>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType Local --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMmode Full --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat --scoreGap -1000000 --scoreDelBase -1 --scoreInsBase -1 --outFilterMismatchNmax 999 --outFilterMismatchNoverLmax 999 --outMultimapperOrder Random --outSAMmultNmax 1 --outSAMattributes MD --outFilterMatchNminOverLread 0</starParameter_shapemapper>
+  <starParameter_zhangQiangFeng_icSHAPE>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMmode Full --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat --outFilterMismatchNmax 3 --outFilterMultimapNmax 10 --alignEndsType Local --scoreGap -1000 --outSAMmultNmax 1</starParameter_zhangQiangFeng_icSHAPE>
+  <ncapSeeker>/public/home/huangjh/bioTools/bin/ncapSeeker</ncapSeeker>
+  <ncapSeekerParameter>-t 5 -c 2 -F 2 -e 5 -s --norm --pair</ncapSeekerParameter>
+  <ncapSeekerParameter_nanopore>-t 5 -c 2 -F 2 -e 5 -s --norm</ncapSeekerParameter_nanopore>
+  <startEndSeeker>/public/home/huangjh/bioTools/bin/napEndSeeker</startEndSeeker> 
+  <startEndSeekerParameter>-s -t 2 -m 2</startEndSeekerParameter>
+  <bedConservation>/public/home/huangjh/bioTools/bin/bedConservation</bedConservation>
+  <bedConservationParameter>-c -1000</bedConservationParameter>
+  <bedAnnotator>/public/home/huangjh/bioTools/bin/bedAnnotator</bedAnnotator>
+  <bedAnnotatorParameter>-s 1</bedAnnotatorParameter>
+  <bedAnnotatorParameter2>-s 0</bedAnnotatorParameter2>
+  <bedtools>/public/home/huangjh/softwares/DOTSF/bedtools-2.17.0/bin/bedtools</bedtools>
+  <bedtools2>bedtools</bedtools2>
+  <samtools>/public/home/huangjh/softwares/samtools/samtools</samtools>
+  <ncapToWig>/public/home/huangjh/bioTools/bin/ncapToWig</ncapToWig> 
+  <ncapToWigParameter>-s --ncap --rpm -P --norm</ncapToWigParameter> 
+  <ncapToWigParameter2>-s --ncap --rpm --norm</ncapToWigParameter2>
+  <wigToBigWig>/public/home/huangjh/softwares/kentUcscExe/wigToBigWig</wigToBigWig>
+  <chromSizeFile>/public/home/huangjh/softwares/kentUcscExe/hg38.chrom.sizes</chromSizeFile>
+  <annotateSites>/public/home/huangjh/bioTools/bin/annotateSites</annotateSites>
+  <annotateSitesParameter>-s -m 0.0001 -w 50</annotateSitesParameter>
+  <drawAnnotateSites>/public/home/huangjh/perlBioTools/annotateSite/drawAnnotateSites.R</drawAnnotateSites>
+  <findMotifSite>/public/home/huangjh/perlBioTools/novelClassNcRNA/findSigPosMotifs.pl</findMotifSite>
+  <bamExpression>/public/home/huangjh/C/bin/bamExpression</bamExpression> 
+  <bamExpressionr_yang_NAP>/public/home/huangjh/bioTools/bin/bamExpression</bamExpressionr_yang_NAP> 
+  <bamExpressionParameter>--noSplice --norm</bamExpressionParameter>
+  <bamExpressionParameter_yang_NAP>--pair --noSplice --norm</bamExpressionParameter_yang_NAP>
+  <bamToWig>/public/home/huangjh/C/bin/bamToWig</bamToWig>
+  <bamToWigParameter>-s --norm --rpm</bamToWigParameter>
+  <bamToWigParameter_1>-s --norm --rpm</bamToWigParameter_1>
+  <diffExp>/public/home/huangjh/perlBioTools/ncapSeeker/limmaRNAseqDiffExp.R</diffExp>
+  <liftOver>/public/home/huangjh/softwares/kentUcscExe/liftOver</liftOver>
+  <liftOverParameter>-minMatch=0.8</liftOverParameter>
+  <clustalw>/public/home/huangjh/softwares/clustalw/clustalw2</clustalw>
+  <r2r>/public/home/huangjh/softwares/R2R-1.0.6/bin/r2r</r2r>
+  <rscape>/public/home/huangjh/softwares/rscape_v1.5.16/bin/R-scape</rscape>
+  <RNAalifoldParameter>--noPS --aln-stk=</RNAalifoldParameter>
+  <rscapeParameter>--rna --fold -s --r2rall</rscapeParameter>
+  <rscapeParameter_old>--rna -s --r2rall --gapthresh 1 -E 0.05</rscapeParameter_old>
+  <circos>/public/home/huangjh/softwares/circos/bin/circos</circos>
+  <featureCounts>/public/home/huangjh/softwares/subread/bin/featureCounts</featureCounts>
+  <featureCountsParameter>-T 16 -M --fraction -p -d 15 -D 10000</featureCountsParameter>
+</configure>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<configure>
+  <trimScan>/public/home/huangjh/bioTools/bin/trimScan</trimScan>
+  <trimScanParameter>--onlyPE --nap</trimScanParameter>
+  <scanMotif>/public/home/huangjh/bioTools/bin/scanMotif</scanMotif>
+  <scanMotifParameter>-s 0.9</scanMotifParameter>
+  <motifMatrix>/public/home/huangjh/perlBioTools/scanMotif/manual_correct_motifs.motif</motifMatrix>
+  <rnaMotifSeeker>/public/home/huangjh/bioTools/bin/rnaMotifSeeker</rnaMotifSeeker> 
+  <rnaMotifSeekerParameter>--norc</rnaMotifSeekerParameter>
+  <genomeFile>/public/home/huangjh/genome/mouse/mm10/WholeGenomeFasta/mm10.fa</genomeFile>
+  <faidxFile>/public/home/huangjh/genome/mouse/mm10/WholeGenomeFasta/mm10.fa.fai</faidxFile>
+  <exonAnnotation>/public/home/huangjh/genome/mouse/mm10/annotations/genecodeV23/annotationBed/mm10.genecodeV23_tRNA_snoRNA_miRNA_rmsk.curated.bed6</exonAnnotation>
+  <bamToWig>/public/home/huangjh/C/bin/bamToWig</bamToWig>
+  <bamToWigParameter>-s --norm --rpm</bamToWigParameter>
+  <geneGtf>/public/home/huangjh/genome/mouse/mm10/annotations/genecodeV23/orginalData/mm10.gencode.vM23.annotation.gtf</geneGtf>
+  <annotationDir>/public/home/huangjh/genome/mouse/mm10/annotations/genecodeV23/annotationSite/common</annotationDir>
+  <ncrnaDir>/public/home/huangjh/genome/mouse/mm10/annotations/genecodeV23/annotationSite/ncRNA</ncrnaDir> 
+  <splicingDir>/public/home/huangjh/genome/mouse/mm10/annotations/genecodeV23/annotationSite/splicing</splicingDir>
+  <conservationProfile>/public/home/huangjh/genome/mouse/mm10/conservation/mm10.60way.phyloP60way.bw</conservationProfile>
+  <chainDir>/public/home/huangjh/genome/chainFile/mm10</chainDir>
+  <genomeSeqDir>/public/home/huangjh/genome/WholeGenomeFasta</genomeSeqDir>
+  <starIdx>/public/home/huangjh/genome/mouse/mm10/indexes/StarIndex/</starIdx>
+  <starProgram>/public/home/huangjh/softwares/STAR/bin/STAR</starProgram>
+  <starParameter>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType EndToEnd --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.05  --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMtype BAM Unsorted --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat</starParameter>
+  <ncapSeeker>/public/home/huangjh/bioTools/bin/ncapSeeker</ncapSeeker>
+  <starParameterAlignEndsTypeLocal>--runThreadN 16 --genomeLoad NoSharedMemory --limitBAMsortRAM 60000000000 --alignEndsType Local --outFilterType BySJout --outFilterMultimapScoreRange 0 --outFilterMultimapNmax 20 --outFilterMismatchNmax 10 --outFilterMismatchNoverLmax 0.05  --outFilterScoreMin 0 --outFilterScoreMinOverLread 0 --outFilterMatchNmin 20  --outFilterMatchNminOverLread 0.8  --seedSearchStartLmax 15 --seedSearchStartLmaxOverLread 1 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --alignSJoverhangMin 20 --alignSJDBoverhangMin 10 --outSAMtype BAM Unsorted --outSAMmode Full --outSAMattributes All --outSAMunmapped None --outSAMorder Paired --outSAMprimaryFlag AllBestScore --outSAMreadID Standard --outReadsUnmapped Fastx --limitOutSJcollapsed 5000000 --alignEndsProtrude 150 ConcordantPair --readFilesCommand zcat</starParameterAlignEndsTypeLocal>
+  <ncapSeekerParameter>-t 5 -c 2 -F 2 -e 5 -s --norm --pair</ncapSeekerParameter>
+  <ncapSeekerParameter_nanopore>-t 5 -c 2 -F 2 -e 5 -s --norm</ncapSeekerParameter_nanopore>
+  <startEndSeeker>/public/home/huangjh/bioTools/bin/startEndSeeker</startEndSeeker> 
+  <startEndSeekerParameter>-s -t 2 -m 2</startEndSeekerParameter>
+  <bedConservation>/public/home/huangjh/bioTools/bin/bedConservation</bedConservation>
+  <bedConservationParameter>-c -1000</bedConservationParameter>
+  <bedAnnotator>/public/home/huangjh/bioTools/bin/bedAnnotator</bedAnnotator>
+  <bedAnnotatorParameter>-s 1</bedAnnotatorParameter>
+  <bedAnnotatorParameter2>-s 0</bedAnnotatorParameter2>
+  <bedtools>/public/home/huangjh/softwares/DOTSF/bedtools-2.17.0/bin/bedtools</bedtools>
+  <samtools>/public/home/huangjh/softwares/samtools/samtools</samtools>
+  <ncapToWig>/public/home/huangjh/bioTools/bin/ncapToWig</ncapToWig> 
+  <ncapToWigParameter>-s --ncap --rpm -P --norm</ncapToWigParameter>
+  <wigToBigWig>/public/home/huangjh/softwares/kentUcscExe/wigToBigWig</wigToBigWig>
+  <chromSizeFile>/public/home/huangjh/softwares/kentUcscExe/mm10.chrom.sizes</chromSizeFile>
+  <annotateSites>/public/home/huangjh/bioTools/bin/annotateSites</annotateSites>
+  <annotateSitesParameter>-s -m 0.0001 -w 50</annotateSitesParameter>
+  <drawAnnotateSites>/public/home/huangjh/perlBioTools/annotateSite/drawAnnotateSites.R</drawAnnotateSites>
+  <findMotifSite>/public/home/huangjh/perlBioTools/novelClassNcRNA/findSigPosMotifs.pl</findMotifSite>
+  <bamExpression>/public/home/huangjh/C/bin/bamExpression</bamExpression> 
+  <bamExpressionr_yang_NAP>/public/home/huangjh/bioTools/bin/bamExpression</bamExpressionr_yang_NAP> 
+  <bamExpressionParameter>--norm</bamExpressionParameter>
+  <bamExpressionParameter_yang_NAP>--pair --noSplice --norm</bamExpressionParameter_yang_NAP>
+  <diffExp>/public/home/huangjh/perlBioTools/ncapSeeker/limmaRNAseqDiffExp.R</diffExp>
+  <liftOver>/public/home/huangjh/softwares/kentUcscExe/liftOver</liftOver>
+  <liftOverParameter>-minMatch=0.1</liftOverParameter>
+  <clustalw>/public/home/huangjh/softwares/clustalw/clustalw2</clustalw>
+  <r2r>/public/home/huangjh/softwares/R2R-1.0.6/bin/r2r</r2r>
+  <rscape>/public/home/huangjh/softwares/rscape_v1.5.16/bin/R-scape</rscape>
+  <rscapeParameter>--rna --fold -s --r2rall</rscapeParameter>
+  <circos>/public/home/huangjh/softwares/circos/bin/circos</circos>
+  <featureCounts>/public/home/huangjh/softwares/subread/bin/featureCounts</featureCounts>
+  <featureCountsParameter>-T 16 -M --fraction -p -d 15 -D 10000</featureCountsParameter>
+</configure>
